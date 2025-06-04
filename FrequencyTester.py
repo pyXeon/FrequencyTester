@@ -80,4 +80,10 @@ freq_label.grid(row=3, column=0, columnspan=2)
 
 root.bind('<Return>', lambda event: check_answer())
 
-root.mainloop()
+
+def main():
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()
