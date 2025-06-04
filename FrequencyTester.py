@@ -12,8 +12,11 @@ score, tests_taken, accuracy, frequency  = 0, 0, 0, None
 root = Tk()
 root.title("Frequency Tester")
 
-score_label = Label(root, text=f"Score: {score}"); score_label.grid(row=0, column=0)
-tests_label = Label(root, text=f"Tests Taken: {tests_taken}"); tests_label.grid(row=0, column=1)
+score_label = Label(root, text=f"Score: {score}")
+score_label.grid(row=0, column=0)
+
+tests_label = Label(root, text=f"Tests Taken: {tests_taken}")
+tests_label.grid(row=0, column=1)
 
 accuracy_label = Label(root, text=f"Accuracy: {accuracy}%")
 accuracy_label.grid(row=0, column=2)
