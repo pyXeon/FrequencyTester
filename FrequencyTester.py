@@ -1,3 +1,10 @@
+"""Simple frequency guessing game using pygame and Tkinter.
+
+The program plays a randomly generated tone and asks the user to guess the
+frequency.  It keeps track of the user's score, total tests taken and overall
+accuracy.
+"""
+
 import pygame
 import random
 import time
@@ -29,6 +36,16 @@ answer_entry.grid(row=1, column=0, columnspan=2)
 from_submit = False
 
 def play_sound():
+    """Play a randomly chosen tone and reset the input field.
+
+    Globals:
+        frequency: set to the chosen tone value.
+        tests_taken: incremented when called directly via the UI.
+        from_submit: read to avoid double-counting tests.
+
+    Side effects include playing audio via ``pygame`` and clearing the
+    ``answer_entry`` widget.
+    """
     global score, tests_taken, accuracy, frequency, from_submit
 
     frequency = random.choice(frequencies)
@@ -49,6 +66,15 @@ def play_sound():
         tests_label.config(text=f"Tests Taken: {tests_taken}")
 
 def check_answer():
+    """Evaluate the user's guess and update all statistics.
+
+    Globals:
+        score, tests_taken, accuracy, frequency: updated based on the guess.
+        from_submit: set to ensure ``play_sound`` does not add another test.
+
+    This function reads the entry field, updates labels, clears the input and
+    triggers a new tone.
+    """
     global score, tests_taken, accuracy, frequency, from_submit
 
     from_submit = True
